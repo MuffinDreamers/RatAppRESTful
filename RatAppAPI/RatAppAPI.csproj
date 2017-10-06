@@ -94,14 +94,11 @@
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AuthManager.cs" />
     <Compile Include="App_Start\DBStorage.cs" />
-    <Compile Include="App_Start\GenericStorage.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\SightingController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
