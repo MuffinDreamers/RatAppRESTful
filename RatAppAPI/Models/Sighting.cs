@@ -27,6 +27,8 @@ namespace RatAppAPI.Models
         [JsonProperty("longitude")]
         public float Longitude { get; set; }
 
+        public Sighting() { }
+
         [JsonConstructor]
         public Sighting(int id, DateTime dateCreated, string locationType, int zipcode,
             string streetAddress, string city, string borough, float latitude, float longitude)
