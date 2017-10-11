@@ -90,5 +90,10 @@ namespace RatAppAPI.Models
             Latitude = old.Latitude;
             Longitude = old.Longitude;
         }
+
+        public override string ToString()
+        {
+            return $"Sighting: {ID}, {DateCreated}, {LocationType}, {Zipcode}, {StreetAddress}, {City}, {Borough}, {Latitude}, {Longitude}" ;
+        }
     }
 }
