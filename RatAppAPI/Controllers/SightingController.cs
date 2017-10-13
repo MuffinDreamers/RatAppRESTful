@@ -48,8 +48,8 @@ namespace RatAppAPI.Controllers
         [HttpPost]
         public IHttpActionResult CreateSighting([FromBody]Sighting sighting, [FromUri] string token = "")
         {
-            if (auth.ValidateToken(token) == null)
-                return Unauthorized();
+            //if (auth.ValidateToken(token) == null)
+                //return Unauthorized();
 
             if (sighting == null)
                 return BadRequest("Improperly formated sighting object");
@@ -66,9 +66,9 @@ namespace RatAppAPI.Controllers
         [HttpDelete]
         public IHttpActionResult DeleteSighting(int id, [FromUri] string token = "")
         {
-            User requestUser = auth.ValidateToken(token);
+            /*User requestUser = auth.ValidateToken(token);
             if ((requestUser == null) || (requestUser.Role != Models.User.Roles.Admin))
-                return Unauthorized();
+                return Unauthorized();*/
 
             if (db.DeleteSighting(id))
                 return Ok();
