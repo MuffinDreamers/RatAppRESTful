@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using RatAppAPI.Models;
 using System.Diagnostics;
+using ContactList.App_Start;
 
 namespace RatAppAPI.App_Start
 {
@@ -16,20 +17,16 @@ namespace RatAppAPI.App_Start
             UNKNOWN_ERROR = 9999,
             NO_ERROR = 0
         }
-        const string dataSource = "muffindreamers.database.windows.net";
-        const string userID = "muffin";
-        const string password = "dreamers123!";
-        const string initialCatalog = "RatAppDB";
 
         string connectionString;
 
         public DBStorage()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = dataSource;
-            builder.UserID = userID;
-            builder.Password = password;
-            builder.InitialCatalog = initialCatalog;
+            builder.DataSource = Credentials.DataSource;
+            builder.UserID = Credentials.UserId;
+            builder.Password = Credentials.Password;
+            builder.InitialCatalog = Credentials.InitialCatalog;
             connectionString = builder.ConnectionString;
         }
 
