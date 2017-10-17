@@ -85,9 +85,7 @@
       <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -106,9 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AuthManager.cs" />
+    <Compile Include="App_Start\Credentials.cs" />
     <Compile Include="App_Start\DBStorage.cs" />
     <Compile Include="App_Start\LocalStorage.cs" />
-    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\SightingController.cs" />
     <Compile Include="Controllers\UserController.cs" />

@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using RatAppAPI.Models;
 using RatAppAPI.App_Start;
+using Newtonsoft.Json;
 
 namespace RatAppAPI.Controllers
 {
@@ -46,13 +47,15 @@ namespace RatAppAPI.Controllers
 
         [Route("sightings/report")]
         [HttpPost]
-        public IHttpActionResult CreateSighting([FromBody]Sighting sighting, [FromUri] string token = "")
+        public IHttpActionResult CreateSighting([FromBody]Sighting sighting/*, [FromUri]string sighting*/)
         {
             //if (auth.ValidateToken(token) == null)
                 //return Unauthorized();
 
             if (sighting == null)
                 return BadRequest("Improperly formated sighting object");
+
+            // Sighting sighting = JsonConvert.DeserializeObject<Sighting>(sighting);
 
             Sighting result = db.InsertSighting(sighting);
 
